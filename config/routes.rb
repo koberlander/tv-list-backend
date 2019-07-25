@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :programs
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+# namespace each folder we add for a fetch request to http://localhost:3000/api/v1/programs
+  namespace :api do
+
+    namespace :v1 do
+
+      resource :programs
+      resource :comments
+
+    end
+
+  end
+
 end
