@@ -1,6 +1,15 @@
 # README
 
-Routes:
+Rails Controller, React Reducer/Actions:
+- GET shows that match searchTerm
+- View watchlist (ternary - program.watchlist === true: return in a card? : null)
+- Add show to watchlist
+- Delete show from watchlist - switch to false
+- Comment on a show (should appear under show and be associated with the show)
+- Edit my comment on a show
+- Delete my comment
+
+NavBar Routes:
 home/root - '/'
 watchlist - '/watchlist'
 about - '/about'
@@ -20,7 +29,3 @@ Skateboard:
  - search input and fetch
  - list shows and make comments
  - show watchlist []
-
-Stretch features:
- - List current season of eps under show
- - mark eps as watched
