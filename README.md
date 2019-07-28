@@ -20,7 +20,3 @@ Skateboard:
  - search input and fetch
  - list shows and make comments
  - show watchlist []
-
-Stretch features:
- - List current season of eps under show
- - mark eps as watched
