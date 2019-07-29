@@ -21,20 +21,20 @@ better_call_saul = Program.create!(url: 'http://www.tvmaze.com/shows/618/better-
 
 good_place = Program.create!(url: 'http://www.tvmaze.com/shows/2790/the-good-place', name: 'The Good Place', network: 'NBC', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/165/414887.jpg', watchlist: false)
 
-altered_carbon = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+altered_carbon = Program.create!(url: 'http://www.tvmaze.com/shows/12036/altered-carbon', name: 'Altered Carbon', network: 'Netflix', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/143/358572.jpg', watchlist: false)
 
-stephen_universe = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+stephen_universe = Program.create!(url: 'http://www.tvmaze.com/shows/1615/steven-universe', name: 'Stephen Universe', network: 'Cartoon Network', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/8/22200.jpg', watchlist: false)
 
-rick_morty = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+rick_morty = Program.create!(url: 'http://www.tvmaze.com/shows/216/rick-and-morty', name: 'Rick and Morty', network: 'Adult Swim', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/1/3603.jpg', watchlist: false)
 
-homeland = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+homeland = Program.create!(url: 'http://www.tvmaze.com/shows/7/homeland', name: 'Homeland', network: 'Showtime', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/143/359279.jpg', watchlist: false)
 
-orville = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+orville = Program.create!(url: 'http://www.tvmaze.com/shows/20263/the-orville', name: 'The Orville', network: 'FOX', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/175/438324.jpg', watchlist: false)
 
-ap_bio = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+ap_bio = Program.create!(url: 'http://www.tvmaze.com/shows/28039/ap-bio', name: 'A.P. Bio', network: 'NBC', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/183/459264.jpg', watchlist: false)
 
-mick = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+mick = Program.create!(url: 'http://www.tvmaze.com/shows/12604/the-mick', name: 'The Mick', network: 'FOX', image: '', watchlist: false)
 
-city_on_hill = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+city_on_hill = Program.create!(url: 'http://www.tvmaze.com/shows/30780/city-on-a-hill', name: 'City on a Hill', network: 'Showtime', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/194/486341.jpg', watchlist: false)
 
-chernobyl = Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
+chernobyl = Program.create!(url: 'http://www.tvmaze.com/shows/30770/chernobyl', name: 'Chernobyl', network: 'HBO', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/193/482599.jpg', watchlist: false)
