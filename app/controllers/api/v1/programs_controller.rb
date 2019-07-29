@@ -1,6 +1,37 @@
+# added namespacing here as well to coincide with our routes
 class Api::V1::ProgramsController < ApplicationController
-  # added namespacing here as well to coincide with our routes
+
   def index
-    # @programs = some stuff with JSON:[Program.all]?
+    @programs = Account.all
+    render json: @programs
+  end
+
+  def create
+    #use .new so that it is not immediately saved into the db and we can do some error handling (works better with our validations this way)
+    @program = Program.new(program_params)
+
+    # if able to save the program, then let's render it. Otherwise, throw an error.
+    if @program.save
+      render json: @program
+
+    else
+      render json: {error: 'Unable to create program'}
+  end
+
+  def show
+    # .find and pass in the id of the program we want to see
+    @program = Program.find(params[:id])
+    render json: @program
+  end
+
+
+  def destroy
+    @program = Program.destroy(params[:id])
+  end
+
+  private
+
+  def program_params
+    params.require(:program).permit(:url, :name, :network, :image)
   end
 end
