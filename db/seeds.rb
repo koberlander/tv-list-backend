@@ -9,7 +9,6 @@
 # deletes all old records before loading so that you don't create multiples
 Program.destroy_all
 
-<<<<<<< HEAD
 # Seed a few shows and initialize with favorite set to false
 # Program.create!(url: '', name: '', network: '', image: '', watchlist: false)
 
