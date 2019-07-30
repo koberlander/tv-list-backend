@@ -16,6 +16,8 @@ class Api::V1::ProgramsController < ApplicationController
 
     else
       render json: {error: 'Unable to create program'}
+    end
+
   end
 
   def show

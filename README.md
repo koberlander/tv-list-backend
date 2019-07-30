@@ -1,4 +1,5 @@
 # README
+My tv-list-backend is responsible for the database and all of the logic required to manipulate the programs and comments inside that database.
 
 Rails Controller, React Reducer/Actions:
 - GET shows that match searchTerm
