@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   namespace :api do
 
     namespace :v1 do
-
-      resource :programs
-      resource :comments
+      # we nest our routes so that we can view the relationship between one program and all of its comments. we remove access to api/v1/comments because that doesn't make sense to have in my case.
+      resource :programs do
+        resource :comments
+      end
 
     end
 
