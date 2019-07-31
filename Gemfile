@@ -18,7 +18,11 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 
+# for debugging
 gem 'pry'
+
+# organize JSON by nesting comments under the program they are associated with
+gem 'active_model_serializers'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
