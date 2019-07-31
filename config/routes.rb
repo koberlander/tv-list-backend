@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
     namespace :v1 do
 
-      resource :programs do
+      resources :programs do
 
-          resource :comments
-          
+          resources :comments
+
       end
 
     end

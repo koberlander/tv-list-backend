@@ -45,3 +45,5 @@ mick = Program.create!(id: 15, url: 'http://www.tvmaze.com/shows/12604/the-mick'
 city_on_hill = Program.create!(id: 16, url: 'http://www.tvmaze.com/shows/30780/city-on-a-hill', name: 'City on a Hill', network: 'Showtime', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/194/486341.jpg', watchlist: false)
 
 chernobyl = Program.create!(id: 17, url: 'http://www.tvmaze.com/shows/30770/chernobyl', name: 'Chernobyl', network: 'HBO', image: 'http://static.tvmaze.com/uploads/images/medium_portrait/193/482599.jpg', watchlist: false)
+
+comment1 = Comment.create!(program_id: 5, text: "Krysten Ritter excels in both comedic and dramatic roles. I'm so happy this show made her a household name.", author: 'Kristin')
