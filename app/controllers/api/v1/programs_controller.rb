@@ -12,7 +12,7 @@ class Api::V1::ProgramsController < ApplicationController
   def create
     #use .new so that it is not immediately saved into the db and we can do some error handling (works better with our validations this way)
     @program = Program.new(program_params)
-
+    # binding.pry
     # if able to save the program, then let's render it. Otherwise, throw an error.
     if @program.save
       render json: @program
@@ -31,8 +31,10 @@ class Api::V1::ProgramsController < ApplicationController
 
 
   def destroy
+    # binding.pry
     # .find and pass in the id of the program we want to delete - may refactor later
     @program = Program.destroy(params[:id])
+    render json: {message: 'successfully deleted'}
   end
 
   private
