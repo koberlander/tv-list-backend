@@ -9,11 +9,11 @@ class Api::V1::ProgramsController < ApplicationController
     render json: @programs
   end
 
+  # Figure out error handling on form input fields
   def create
     #use .new so that it is not immediately saved into the db and we can do some error handling (works better with our validations this way)
     @program = Program.new(program_params)
-    # binding.pry
-    # if able to save the program, then let's render it. Otherwise, throw an error.
+
     if @program.save
       render json: @programs
 
@@ -29,6 +29,21 @@ class Api::V1::ProgramsController < ApplicationController
     render json: @program
   end
 
+# Should there be error handling here?
+  def update
+    @program = Program.find(params[:id])
+    binding.pry
+
+    @program.update(program_params)
+
+
+    # if @program.save
+    #   render json: @programs
+    #
+    # else
+    #   render json: {message: 'Action could not be saved.'}
+
+  end
 
   def destroy
     # binding.pry
