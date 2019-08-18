@@ -15,7 +15,7 @@ class Api::V1::ProgramsController < ApplicationController
     # binding.pry
     # if able to save the program, then let's render it. Otherwise, throw an error.
     if @program.save
-      render json: @program
+      render json: @programs
 
     else
       render json: {error: 'Unable to create program'}

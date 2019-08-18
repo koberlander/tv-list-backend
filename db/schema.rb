@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_172202) do
+ActiveRecord::Schema.define(version: 2019_08_18_135413) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "program_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_172202) do
     t.string "name"
     t.string "network"
     t.string "image"
-    t.boolean "watchlist"
+    t.boolean "watchlist", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
