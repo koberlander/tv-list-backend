@@ -29,14 +29,18 @@ class Api::V1::ProgramsController < ApplicationController
     render json: @program
   end
 
-# Should there be error handling here?
+
   def update
     @program = Program.find(params[:id])
 
-    @program.update(program_params)
-    # binding.pry
+        @program.update(program_params)
 
-    redirect_to @programs
+
+        if @program.save
+          render json: @program
+        else
+          render json: {error: 'unable to update program' }
+        end
   end
 
   def destroy
