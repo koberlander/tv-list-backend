@@ -32,17 +32,11 @@ class Api::V1::ProgramsController < ApplicationController
 # Should there be error handling here?
   def update
     @program = Program.find(params[:id])
-    binding.pry
 
     @program.update(program_params)
+    # binding.pry
 
-
-    # if @program.save
-    #   render json: @programs
-    #
-    # else
-    #   render json: {message: 'Action could not be saved.'}
-
+    redirect_to @programs
   end
 
   def destroy
@@ -55,6 +49,6 @@ class Api::V1::ProgramsController < ApplicationController
   private
 
   def program_params
-    params.require(:program).permit(:url, :name, :network, :image)
+    params.require(:program).permit(:url, :name, :network, :image, :watchlist)
   end
 end
