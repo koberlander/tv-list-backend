@@ -15,7 +15,7 @@ class Api::V1::ProgramsController < ApplicationController
     @program = Program.new(program_params)
 
     if @program.save
-      render json: @programs
+      render json: @program
 
     else
       render json: {error: 'Unable to create program'}
