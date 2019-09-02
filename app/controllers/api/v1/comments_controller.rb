@@ -11,8 +11,8 @@ class Api::V1::CommentsController < ApplicationController
     def show
       # commented out because I decided that I do not want comments to have a separate show since they will just display under their program
 
-      # @comment = Program.comments.find_by_id(id: params[:id])
-      # render json: @comment
+      @comment = Program.comments.find_by_id(id: params[:id])
+      render json: @comment
     end
 
     def new
@@ -34,16 +34,13 @@ class Api::V1::CommentsController < ApplicationController
 
     end
 
-    def edit
-    end
-
     def update
       @comment = Program.comments.find_by_id(id: params[:id])
 
       if @comment.valid?
         @comment.save
-        # I don't want to render just the comment, so I am showing just the program. May choose to redirect_to the watchlist_path later.
-        redirect_to @program
+        # I don't want to render just the comment, so should I show just the program? May choose to redirect_to the watchlist_path later.
+        redirect_to @comment
       else
         render json: {error: 'Unable to update comment. Please try again.'}
     end
