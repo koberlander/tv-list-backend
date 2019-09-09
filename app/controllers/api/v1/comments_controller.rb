@@ -27,9 +27,9 @@ class Api::V1::CommentsController < ApplicationController
       # since I have validations on my comments, I write the following to check if those requirements are met before saving the comment. If they fail, I'll render a blank comment form.
       if @comment.valid?
         @comment.save
-        redirect_to @program
+        render json: @comment
       else
-        render :new
+        render json: {error: 'Could not add comment.'}
       end
 
     end
@@ -54,6 +54,10 @@ class Api::V1::CommentsController < ApplicationController
     # adding this method because every time I want to access a comment, I'm going to have to find the program that it is associated with first. That can be a lot of repetitive code.
     def set_program
       @program = Program.find(params[:program_id])
+    end
+
+    def add_comment
+
     end
 
     def comment_params
