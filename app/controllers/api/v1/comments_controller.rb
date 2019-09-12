@@ -21,13 +21,14 @@ class Api::V1::CommentsController < ApplicationController
 
 
     def create
-      # both .new and .build would work here, according to Annabel. I will use new as I am most familiar with it.
+      # both .new and .build would work here. I will use .new as I am most familiar with it.
+
       @comment = @program.comments.new(comment_params)
+      # binding.pry
 
       # since I have validations on my comments, I write the following to check if those requirements are met before saving the comment. If they fail, I'll render a blank comment form.
-      if @comment.valid?
-        @comment.save
-        render json: @comment
+      if @comment.save
+        render json: @program
       else
         render json: {error: 'Could not add comment.'}
       end
@@ -37,12 +38,12 @@ class Api::V1::CommentsController < ApplicationController
     def update
       @comment = Program.comments.find_by_id(id: params[:id])
 
-      if @comment.valid?
-        @comment.save
+      if @comment.save
         # I don't want to render just the comment, so should I show just the program? May choose to redirect_to the watchlist_path later.
-        redirect_to @comment
+        render json: @program
       else
         render json: {error: 'Unable to update comment. Please try again.'}
+      end
     end
 
     def destroy
@@ -51,18 +52,13 @@ class Api::V1::CommentsController < ApplicationController
 
     private
 
-    # adding this method because every time I want to access a comment, I'm going to have to find the program that it is associated with first. That can be a lot of repetitive code.
+    # adding this method because every time I want to access a comment, I'm going to have to find the program that it is associated with first.
     def set_program
       @program = Program.find(params[:program_id])
-    end
-
-    def add_comment
-
     end
 
     def comment_params
       params.require(:comment).permit(:program_id, :text, :author)
     end
-  end
 
 end
