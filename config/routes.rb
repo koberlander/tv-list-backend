@@ -8,8 +8,7 @@ Rails.application.routes.draw do
       resources :programs do
 
           resources :comments
-          # it was suggested I add this but I don't know why it's needed for comments and not programs (bc comments are nested)
-            # delete "/api/v1/programs/${programId}/comments/${commentId}", to: "comments#delete"
+          
       end
 
     end

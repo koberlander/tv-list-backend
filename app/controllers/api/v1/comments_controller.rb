@@ -35,16 +35,6 @@ class Api::V1::CommentsController < ApplicationController
 
     end
 
-    def update
-      @comment = Program.comments.find_by(id: params[:id])
-
-      if @comment.save
-        # I don't want to render just the comment, so should I show just the program? May choose to redirect_to the watchlist_path later.
-        render json: @program
-      else
-        render json: {error: 'Unable to update comment. Please try again.'}
-      end
-    end
 
     def destroy
 
@@ -67,3 +57,15 @@ class Api::V1::CommentsController < ApplicationController
     end
 
 end
+
+# POSSIBLE IMPLEMENTATION LATER
+# def update
+#   @comment = Program.comments.find_by(id: params[:id])
+#
+#   if @comment.save
+#     # I don't want to render just the comment, so should I show just the program? May choose to redirect_to the watchlist_path later.
+#     render json: @program
+#   else
+#     render json: {error: 'Unable to update comment. Please try again.'}
+#   end
+# end
