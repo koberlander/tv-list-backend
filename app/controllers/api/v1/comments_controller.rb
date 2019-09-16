@@ -36,7 +36,7 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def update
-      @comment = Program.comments.find_by_id(id: params[:id])
+      @comment = Program.comments.find_by(id: params[:id])
 
       if @comment.save
         # I don't want to render just the comment, so should I show just the program? May choose to redirect_to the watchlist_path later.
@@ -47,6 +47,9 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def destroy
+
+      @comment = Comment.find_by(id: params[:id])
+        # binding.pry
       @comment.destroy
     end
 
@@ -58,7 +61,7 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:program_id, :text, :author)
+      params.require(:comment).permit(:text, :author)
     end
 
 end

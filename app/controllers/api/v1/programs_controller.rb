@@ -53,6 +53,6 @@ class Api::V1::ProgramsController < ApplicationController
   private
 
   def program_params
-    params.require(:program).permit(:url, :name, :network, :image, :watchlist, comment: [[:text, :author]])
+    params.require(:program).permit(:url, :name, :network, :image, :watchlist)
   end
 end
