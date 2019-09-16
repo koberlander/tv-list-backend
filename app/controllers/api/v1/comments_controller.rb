@@ -11,7 +11,7 @@ class Api::V1::CommentsController < ApplicationController
     def show
       # commented out because I decided that I do not want comments to have a separate show since they will just display under their program
 
-      @comment = Program.comments.find_by_id(id: params[:id])
+      @comment = Program.comments.find_by(id: params[:id])
       render json: @comment
     end
 
@@ -51,6 +51,8 @@ class Api::V1::CommentsController < ApplicationController
       @comment = Comment.find_by(id: params[:id])
         # binding.pry
       @comment.destroy
+
+      render json: @program
     end
 
     private
